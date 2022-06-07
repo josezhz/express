@@ -1,0 +1,29 @@
+{{#extends 'base'}}
+
+{{#block "content"}}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Plot</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    {{#each movies}}
+    <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.title}}</td>
+        <td>{{this.plot}}</td>
+        <td>
+            <a href="/form/edit/{{this.id}}" class="btn btn-primary">Edit</a>
+            <a href="/form/delete/{{this.id}}" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
+
+{{/block}}
+
+{{/extends}}
